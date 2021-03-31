@@ -13,6 +13,9 @@ inputs:
   repository_name:
     description: 'ECR repository name'
     required: true
+  source_path:
+    description: 'Docker container path in repository'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -21,3 +24,4 @@ runs:
     - ${{ inputs.aws_secret_access_key }}
     - ${{ inputs.aws_default_region }}
     - ${{ inputs.repository_name }}
+    - ${{ inputs.source_path }}
