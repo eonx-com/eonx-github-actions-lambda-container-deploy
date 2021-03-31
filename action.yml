@@ -13,6 +13,9 @@ inputs:
   repository_name:
     description: 'ECR repository name'
     required: true
+  lambda_function_name:
+    description: 'Lambda function name'
+    required: true
   source_path:
     description: 'Docker container path in repository'
     required: true
@@ -24,4 +27,5 @@ runs:
     - ${{ inputs.aws_secret_access_key }}
     - ${{ inputs.aws_default_region }}
     - ${{ inputs.repository_name }}
+    - ${{ inputs.lambda_function_name }}
     - ${{ inputs.source_path }}
